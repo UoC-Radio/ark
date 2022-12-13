@@ -3,6 +3,7 @@
 import os
 import shutil
 import argparse
+from tqdm import tqdm
 
 
 def main(playlist_path: str, output_path):
@@ -15,7 +16,7 @@ def main(playlist_path: str, output_path):
     with open(playlist_path) as f:
         lines = f.readlines()
 
-    for l in lines:
+    for l in tqdm(lines):
         if l.startswith('File'):
             filepath = l[:-1].split('=')[1]
             if os.path.exists(filepath):
