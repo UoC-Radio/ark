@@ -4,7 +4,7 @@ import xml
 import xml.etree.ElementTree as ET
 
 
-tree = ET.parse('./schedule.xml')
+tree = ET.parse('.test/schedule.xml')
 root = tree.getroot()
 
 days = {
